@@ -28,16 +28,16 @@ const CtaSection = () => {
         <h2 className="font-display text-4xl md:text-6xl font-semibold text-warm-white leading-tight mb-6">
           The Earth Is Calling.
           <br />
-          <span className="italic text-sand">Will You Answer?</span>
+          <span className="italic text-[#9bcf9b]">Will You Answer?</span>
         </h2>
-        <p className="text-warm-white/60 font-body text-lg leading-relaxed mb-12 max-w-xl mx-auto">
+        <p className="text-warm-white/60 font-body font-extralight text-sm md:text-lg leading-relaxed mb-12 max-w-xl mx-auto">
           Speak with our journey designers to craft a bespoke eco-adventure 
           tailored to your rhythm.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href="#"
-            className="px-12 py-4 bg-sand text-forest rounded-full font-body font-semibold text-sm uppercase tracking-wider transition-all duration-500 hover:bg-warm-white hover:shadow-lg hover:shadow-sand/20"
+            className="px-12 py-4 bg-moss-light text-forest rounded-full font-body font-semibold text-sm uppercase tracking-wider transition-all duration-500 hover:bg-warm-white hover:shadow-lg hover:shadow-sand/20"
           >
             Plan My Journey
           </a>

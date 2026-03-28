@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import heroImage from "@/assets/hero-forest.jpg";
+import heroImage from "@/assets/parambikulam-reservoir-with-people-sitting-pravin-shanmuganandam-scaled_ytp9ye.jpg";
 
 const HeroSection = () => {
   return (
@@ -28,9 +28,9 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 1, ease: "easeOut" }}
-          className="text-sand font-body text-sm md:text-base uppercase tracking-[0.3em] mb-6"
+          className="text-moss-light font-body text-sm md:text-base uppercase tracking-[0.3em] mb-6"
         >
-          Luxury Eco-Tourism
+          Nature-Led Travel
         </motion.p>
 
         <motion.h1
@@ -39,19 +39,19 @@ const HeroSection = () => {
           transition={{ delay: 1.1, duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
           className="font-display text-5xl md:text-7xl lg:text-8xl font-semibold text-warm-white leading-[1.05] max-w-5xl text-balance"
         >
-          Where Wilderness
+          Journeys Into
           <br />
-          <span className="italic text-sand">Meets Wonder</span>
+          <span className="text-[#9bcf9b]">Living Landscapes</span>
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.6, duration: 1, ease: "easeOut" }}
-          className="text-warm-white/70 font-body text-lg md:text-xl max-w-2xl mt-8 leading-relaxed"
+          className="text-warm-white/70 font-body text-sm md:text-lg max-w-2xl mt-8 leading-relaxed font-extralight"
         >
-          Immerse yourself in Earth's most pristine landscapes with journeys crafted 
-          for the conscious traveler.
+          Explore meaningful journeys shaped by nature, local culture, and moments
+          that stay with you long after the trip ends.
         </motion.p>
 
         <motion.div
@@ -62,7 +62,7 @@ const HeroSection = () => {
         >
           <a
             href="#destinations"
-            className="group relative px-10 py-4 bg-sand/90 text-forest rounded-full font-body font-semibold text-sm uppercase tracking-wider overflow-hidden transition-all duration-500 hover:bg-sand hover:shadow-lg hover:shadow-sand/20"
+            className="group relative px-10 py-4 bg-moss-light text-warm-white rounded-full font-body font-semibold text-sm uppercase tracking-wider overflow-hidden transition-all duration-500 hover:bg-moss hover:shadow-lg hover:shadow-moss/20"
           >
             <span className="relative z-10">Explore Destinations</span>
           </a>

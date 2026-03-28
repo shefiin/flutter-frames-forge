@@ -21,41 +21,14 @@ const SustainabilitySection = () => {
           <h2 className="font-display text-4xl md:text-6xl font-semibold text-warm-white leading-tight mb-8">
             Travel That
             <br />
-            <span className="italic text-sand">Gives Back</span>
+            <span className="italic text-[#9bcf9b]">Gives Back</span>
           </h2>
-          <p className="text-warm-white/60 font-body text-lg leading-relaxed mb-16">
+          <p className="text-warm-white/60 font-body font-extralight text-sm md:text-lg leading-relaxed mb-16">
             Every journey funds local conservation, supports indigenous communities, 
             and operates within a regenerative framework. We don't just minimize harm — 
             we actively restore.
           </p>
         </motion.div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-          {[
-            { value: "2.4M", label: "Trees Planted", detail: "Across 8 reforestation sites" },
-            { value: "100%", label: "Renewable Energy", detail: "All lodges solar or wind powered" },
-            { value: "$3.2M", label: "Community Fund", detail: "Direct investment since 2019" },
-          ].map((stat, i) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: i * 0.15, ease: [0.22, 1, 0.36, 1] }}
-              viewport={{ once: true }}
-              className="text-center p-8 rounded-2xl border border-warm-white/10 bg-warm-white/5"
-            >
-              <p className="font-display text-5xl font-semibold text-sand mb-2">
-                {stat.value}
-              </p>
-              <p className="text-warm-white font-body font-medium text-sm uppercase tracking-wider mb-2">
-                {stat.label}
-              </p>
-              <p className="text-warm-white/40 font-body text-xs">
-                {stat.detail}
-              </p>
-            </motion.div>
-          ))}
-        </div>
       </div>
     </section>
   );

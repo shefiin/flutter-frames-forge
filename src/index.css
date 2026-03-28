@@ -1,13 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   :root {
-    --font-display: 'Playfair Display', serif;
-    --font-body: 'DM Sans', sans-serif;
+    --font-display: 'Plus Jakarta Sans', sans-serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
 
     --background: 40 33% 96%;
     --foreground: 100 20% 10%;
@@ -105,5 +109,54 @@
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .glass-card-dark {
+    background:
+      linear-gradient(135deg, hsl(var(--forest) / 0.55), hsl(var(--forest) / 0.24)),
+      linear-gradient(180deg, hsl(0 0% 100% / 0.12), hsl(0 0% 100% / 0.04));
+    box-shadow:
+      inset 0 1px 0 hsl(0 0% 100% / 0.18),
+      0 18px 50px hsl(var(--forest) / 0.18);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  .nav-scrolled {
+    background:
+      linear-gradient(135deg, hsl(var(--forest) / 0.68), hsl(var(--forest) / 0.4)),
+      linear-gradient(180deg, hsl(0 0% 100% / 0.12), hsl(0 0% 100% / 0.04));
+    border-color: hsl(0 0% 100% / 0.14);
+    box-shadow:
+      inset 0 1px 0 hsl(0 0% 100% / 0.18),
+      0 18px 44px hsl(var(--forest) / 0.22);
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+  }
+
+  .btn-leaf {
+    box-shadow:
+      inset 0 1px 0 hsl(0 0% 100% / 0.18),
+      0 10px 24px hsl(var(--forest) / 0.12);
+  }
+
+  .animate-leaf-sway {
+    animation: leaf-sway 0.9s ease-in-out;
+    transform-origin: 50% 0%;
+  }
+}
+
+@keyframes leaf-sway {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(-10deg);
+  }
+
+  75% {
+    transform: rotate(8deg);
   }
 }

@@ -5,10 +5,10 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="md:col-span-2">
             <h3 className="font-display text-2xl font-semibold text-background mb-4">
-              Verdant <span className="text-sand">Trails</span>
+              Sahachari <span className="text-[#9bcf9b]">Tours</span>
             </h3>
             <p className="text-background/50 font-body text-sm leading-relaxed max-w-sm">
-              Luxury eco-tourism experiences that connect you to Earth's most extraordinary 
+              Eco-tourism experiences that connect you to Earth's most extraordinary 
               landscapes while preserving them for generations to come.
             </p>
           </div>
@@ -42,12 +42,9 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-background/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="border-t border-background/10 pt-8 justify-center items-center gap-4">
           <p className="text-background/30 font-body text-xs">
-            © 2025 Verdant Trails. All rights reserved.
-          </p>
-          <p className="text-background/30 font-body text-xs">
-            Designed with reverence for the wild.
+            © 2025 Sahachari Tours. All rights reserved.
           </p>
         </div>
       </div>
