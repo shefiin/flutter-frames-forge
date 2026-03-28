@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import coastImg from "@/assets/moyar.png";
 import mountainImg from "@/assets/par-tiger.jpg";
 import rainforestImg from "@/assets/masinagudi.jpg";
@@ -94,22 +95,18 @@ const DestinationsSection = () => {
       return;
     }
 
-    const frame = window.requestAnimationFrame(() => {
-      const activeCard = container.querySelector<HTMLElement>("[data-default-card='true']");
-      if (!activeCard) {
-        return;
-      }
+    const activeCard = container.querySelector<HTMLElement>("[data-default-card='true']");
+    if (!activeCard) {
+      return;
+    }
 
-      const left =
-        activeCard.offsetLeft - (container.clientWidth - activeCard.clientWidth) / 2;
+    const left =
+      activeCard.offsetLeft - (container.clientWidth - activeCard.clientWidth) / 2;
 
-      container.scrollTo({
-        left: Math.max(0, left),
-        behavior: "auto",
-      });
+    container.scrollTo({
+      left: Math.max(0, left),
+      behavior: "auto",
     });
-
-    return () => window.cancelAnimationFrame(frame);
   }, []);
 
   return (
@@ -136,17 +133,25 @@ const DestinationsSection = () => {
           ref={scrollContainerRef}
           className="-mx-6 flex snap-x snap-mandatory gap-3 overflow-x-auto px-3 pb-4 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden md:hidden"
         >
-          <div aria-hidden="true" className="w-[13%] shrink-0" />
+          <div aria-hidden="true" className="w-[8%] shrink-0" />
           {destinations.map((dest, i) => (
             <div
               key={dest.title}
               data-default-card={i === 1 ? "true" : undefined}
-              className="w-[74%] shrink-0 snap-center"
+              className="w-[82%] shrink-0 snap-center"
             >
               <DestinationCard destination={dest} index={i} className="min-h-full" />
             </div>
           ))}
-          <div aria-hidden="true" className="w-[13%] shrink-0" />
+          <div aria-hidden="true" className="w-[8%] shrink-0" />
+        </div>
+
+        <div className="mt-4 flex items-center justify-center gap-3 text-foreground/45 md:hidden">
+          <ChevronLeft className="h-4 w-4" />
+          <span className="font-body text-[11px] uppercase tracking-[0.24em]">
+            Slide Sideways
+          </span>
+          <ChevronRight className="h-4 w-4" />
         </div>
 
         <div className="hidden gap-6 md:grid md:grid-cols-3 lg:gap-8">
