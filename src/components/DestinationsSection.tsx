@@ -46,9 +46,9 @@ const DestinationCard = ({
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay: index * 0.15, ease: [0.22, 1, 0.36, 1] }}
       viewport={{ once: true, margin: "-100px" }}
-      className={`group relative overflow-hidden rounded-2xl cursor-pointer ${className}`}
+      className={`group relative overflow-hidden rounded-xl cursor-pointer sm:rounded-2xl ${className}`}
     >
-      <div className="aspect-[3/4] overflow-hidden">
+      <div className="aspect-[4/5] overflow-hidden sm:aspect-[3/4]">
         <img
           src={destination.image}
           alt={destination.title}
@@ -63,21 +63,21 @@ const DestinationCard = ({
       <div className="absolute inset-0 bg-gradient-to-t from-forest/90 via-forest/20 to-transparent" />
 
       {/* Tag */}
-      <div className="absolute top-6 left-6">
-        <span className="text-xs uppercase tracking-[0.2em] text-sand font-body bg-forest/40 px-4 py-1.5 rounded-full backdrop-blur-sm">
+      <div className="absolute left-4 top-4 sm:left-6 sm:top-6">
+        <span className="rounded-full bg-forest/40 px-3 py-1 text-[10px] uppercase tracking-[0.18em] text-sand backdrop-blur-sm sm:px-4 sm:py-1.5 sm:text-xs sm:tracking-[0.2em]">
           {destination.tag}
         </span>
       </div>
 
       {/* Content */}
-      <div className="absolute bottom-0 left-0 right-0 p-8">
-        <p className="text-sand/80 font-body text-xs uppercase tracking-[0.2em] mb-2">
+      <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-8">
+        <p className="mb-2 font-body text-[10px] uppercase tracking-[0.18em] text-sand/80 sm:text-xs sm:tracking-[0.2em]">
           {destination.subtitle}
         </p>
-        <h3 className="font-display text-3xl md:text-4xl font-semibold text-warm-white mb-3">
+        <h3 className="mb-2 font-display text-[1.75rem] font-semibold leading-tight text-warm-white sm:mb-3 sm:text-3xl md:text-4xl">
           {destination.title}
         </h3>
-        <p className="text-warm-white/60 font-body text-sm leading-relaxed max-w-xs opacity-0 translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
+        <p className="max-w-xs font-body text-xs leading-relaxed text-warm-white/65 opacity-100 transition-all duration-500 sm:text-sm sm:opacity-0 sm:translate-y-4 sm:group-hover:opacity-100 sm:group-hover:translate-y-0">
           {destination.description}
         </p>
       </div>
@@ -134,19 +134,25 @@ const DestinationsSection = () => {
 
         <div
           ref={scrollContainerRef}
-          className="-mx-6 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-4 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden md:px-6 md:gap-6 lg:gap-8"
+          className="-mx-6 flex snap-x snap-mandatory gap-3 overflow-x-auto px-3 pb-4 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden md:hidden"
         >
-          <div aria-hidden="true" className="w-[11%] shrink-0 md:w-[27%] lg:w-[31%] xl:w-[34%]" />
+          <div aria-hidden="true" className="w-[13%] shrink-0" />
           {destinations.map((dest, i) => (
             <div
               key={dest.title}
               data-default-card={i === 1 ? "true" : undefined}
-              className="w-[78%] shrink-0 snap-center md:w-[46%] lg:w-[38%] xl:w-[32%]"
+              className="w-[74%] shrink-0 snap-center"
             >
               <DestinationCard destination={dest} index={i} className="min-h-full" />
             </div>
           ))}
-          <div aria-hidden="true" className="w-[11%] shrink-0 md:w-[27%] lg:w-[31%] xl:w-[34%]" />
+          <div aria-hidden="true" className="w-[13%] shrink-0" />
+        </div>
+
+        <div className="hidden gap-6 md:grid md:grid-cols-3 lg:gap-8">
+          {destinations.map((dest, i) => (
+            <DestinationCard key={dest.title} destination={dest} index={i} />
+          ))}
         </div>
       </div>
     </section>
